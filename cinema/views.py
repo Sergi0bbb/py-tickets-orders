@@ -91,7 +91,6 @@ class MovieSessionViewSet(viewsets.ModelViewSet):
             if movie:
                 queryset = queryset.filter(movie_id=movie)
 
-        if self.action in "list":
             queryset = (
                 queryset
                 .select_related("movie", "cinema_hall")
